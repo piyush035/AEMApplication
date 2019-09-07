@@ -1,0 +1,88 @@
+<div id="footer-nodepath" data-sly-attribute.data-nodePath="${currentNode.path}"></div>
+<div class="container-xl no-padding">
+    <div class="global-footer" data-action="globalfooter" data-sly-use.footer="com.mfsenterprise.mfscom.website.core.models.FooterModel"
+        data-sly-use.header="com.mfsenterprise.mfscom.website.core.models.HeaderSlingModel"  data-sly-use.globalHeader="com.mfsenterprise.mfscom.website.core.models.GlobalHeaderSlingRequestModel">
+        <div class="container">
+            <div class="row">
+                <div class="global-footer__top-row col-sm-2">
+                    <div class="global-footer__logo">
+                        <a href="${footer.logoHomePageUrl}"><img class="mfs-logo" src="/etc/designs/mfs-enterprise/mfscom/clientlibraries/top/images/icons/f-mfs-icon.png" alt="mfs-logo" />
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="global-footer__links col-sm-6" data-linkspath="${globalHeader.locationDataPath}">
+                        <!-- data populating via client side -->
+                </div>
+                <div class="global-footer__bottom-row col-sm-4">
+
+                <sly data-sly-test="${pageProperties.variation!='variation2'}">
+                <div class="disclosure-wrapper">
+					<div class="content">
+							
+					</div>
+					<p class="sml">
+                            <sly data-sly-test="${properties.complianceCode}">
+                                ${properties.complianceCode}.${properties.complianceVersion}
+                            </sly>
+                            <sly data-sly-test="${!properties.complianceCode}">
+                                ${footer.defaultCompliance}
+                            </sly>
+                        </p>
+               </div>
+                    
+                </sly>
+
+
+                    <div class="global-footer__h-links">
+                        <ul class="list">
+                            <li class="desktop-view">&copy;${footer.copyrightYear} ${'copyrightText' @ i18n}</li>
+                            <div data-sly-list="${footer.bottomLabelLink}" data-sly-unwrap>
+                                <li><a href="${item.linkUrl}" title="${item.labelLink}">${item.labelLink}</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="compliance">
+                        
+                    </div>
+                    <div class="global-footer__social-icon">
+                        <ul>
+                            <li>
+                                <a class="facebook social-icons" href="${footer.facebookLabelLink}" target="_blank" title="Facebook"></a>
+                            </li>
+                            <li>
+                                <a href="${footer.twitterLabelLink}" class="twitter social-icons" target="_blank" title="Twitter"></a>
+                            </li>
+                            <li>
+                                <a href="${footer.youtubeLabelLink}" class="youtube social-icons" target="_blank" title="Youtube"></a>
+                            </li>
+                            <li>
+                                <a href="${footer.linkedinLabelLink}" class="linkedin social-icons" target="_blank" title="LinkedIn"></a>
+                            </li>
+                            <li>
+                                <a href="${footer.mailLabelLink}" class="email social-icons" target="_blank" title="Email"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--<div class="mobile-view copyright">&copy;${footer.copyrightYear} ${'copyrightText' @ i18n}</div>-->
+                </div>
+                <sly data-sly-test="${pageProperties.variation=='variation2'}">
+                    <div class="disclosure-wrapper var2">
+							<div class="content">
+							
+							</div>
+							<p class="sml">
+		                            <sly data-sly-test="${properties.complianceCode}">
+		                                ${properties.complianceCode}.${properties.complianceVersion}
+		                            </sly>
+		                            <sly data-sly-test="${!properties.complianceCode}">
+		                                ${footer.defaultCompliance}
+		                            </sly>
+		                     </p>
+                    </div>
+                    
+                </sly>
+            </div>
+        </div>
+    </div>
+</div>
