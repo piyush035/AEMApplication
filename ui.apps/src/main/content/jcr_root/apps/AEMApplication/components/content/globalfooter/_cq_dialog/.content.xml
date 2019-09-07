@@ -23,55 +23,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">                          
-                            <logoHomePageUrl
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                fieldDescription="Enter Logo Home Page Url."
-                                fieldLabel="Logo Home Page Url"
-                                name="./logoHomePageUrl"
-                                rootPath="/content"/>
-							<compliancecode
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"                                
-                                emptyText="Enter Compliance Code of the Page"
-                                fieldLabel="Compliance Code"
-                                name="./complianceCode"/>
-                            <complianceversion
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                emptyText="Enter Compliance Version of the Page"
-                                fieldLabel="Compliance Version"
-                                name="./complianceVersion"/>	
-							<fblink
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                emptyText="Enter Link for MFS Facebook Page"
-                                fieldLabel="Facebook Link"
-                                name="./facebooklabellink"/>
-                            <twitterlink
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                emptyText="Enter Link for MFS Twitter Page"
-                                fieldLabel="Twitter Link"
-                                name="./twitterlabellink"/>
-                            <linkedinlink
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                emptyText="Enter Link for MFS LinkedIn Page"
-                                fieldLabel="LinkedIn Link"
-                                name="./linkedinlabellink"/>
-                            <ytlink
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                emptyText="Enter Link for MFS Youtube Page"
-                                fieldLabel="Youtube Link"
-                                name="./youtubelabellink"/>
-                            <emaillink
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                emptyText="Enter Email Link for MFS"
-                                fieldLabel="Email Link"
-                                name="./maillabellink"/>
+                            
                         </items>
                     </columns>
                 </items>
