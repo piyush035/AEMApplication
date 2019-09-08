@@ -2,6 +2,9 @@
 <div data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
      Edit: Global header
 </div>
-<div class="global-header" data-action="globalHeader">
-	<>
+<div class="global-header" data-action="globalHeader" data-sly-use.globalHeader="com.aem.sample.core.models.HeaderModel">
+
+	<sly data-sly-list.option="${globalHeader.headerLinks}">
+		<a href="${option.link}" class="cta-primary checkout-cta" title="${option.menuLabel}">${option.menuLabel}</a>
+	</sly>
 </div>
