@@ -3,7 +3,7 @@
      Edit: Global header
 </div>
 <div class="global-header" data-action="globalHeader" data-sly-use.globalHeader="com.aem.sample.core.models.HeaderModel">
-
+	<a href="${globalHeader.logoDestinationUrl}"><img src="${globalHeader.logoImagePath}" height="42" width="42"></a>
 	<sly data-sly-list.option="${globalHeader.headerLinks}">
 		<a href="${option.link}" class="cta-primary checkout-cta" title="${option.menuLabel}">${option.menuLabel}</a>
 	</sly>
