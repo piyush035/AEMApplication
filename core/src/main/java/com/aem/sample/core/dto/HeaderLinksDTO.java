@@ -4,7 +4,7 @@
 package com.aem.sample.core.dto;
 
 /**
- * @author Piyush
+ * @author Anand
  *
  */
 public class HeaderLinksDTO {
