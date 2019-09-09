@@ -38,6 +38,10 @@ public class HeaderModel {
 	@Inject
 	@Optional
 	private String logoDestinationUrl;
+	
+	@Inject
+	@Optional
+	private String headerTitle;
 
 	@Inject
 	@Optional
@@ -66,6 +70,13 @@ public class HeaderModel {
 	 */
 	public String getLogoImagePath() {
 		return logoImagePath;
+	}
+	
+	/**
+	 * @return the headerTitle
+	 */
+	public String getHeaderTitle() {
+		return headerTitle;
 	}
 
 	/**

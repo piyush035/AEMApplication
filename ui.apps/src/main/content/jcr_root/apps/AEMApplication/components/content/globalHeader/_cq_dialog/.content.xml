@@ -37,6 +37,12 @@
                                 fieldLabel="Enter logo destination URL"
                                 name="./logoDestinationUrl"
                                 rootPath="/content/AEMApplication"/>
+                            <headerTitle
+                                      jcr:primaryType="nt:unstructured"
+                                      sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                      fieldDescription="Header Label Title"
+                                      fieldLabel="Header Title"
+                                      name="./headerTitle"/>
 							<itemLinks
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/AEMApplication/components/content/multifield"
