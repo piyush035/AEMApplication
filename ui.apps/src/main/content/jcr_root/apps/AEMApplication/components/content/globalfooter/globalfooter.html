@@ -1,11 +1,3 @@
-<div id="footer-nodepath" data-sly-attribute.data-nodePath="${currentNode.path}"></div>
-<div data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
-     Edit: Global footer
-</div>
-<div class="container-xl no-padding">
-    
-</div>
-
  <style>
 .footer {
   position: fixed;
@@ -21,3 +13,10 @@
 <div class="footer">
   <p>Footer</p>
 </div> 
+
+<div data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+     Edit: Global footer
+</div>
+<div class="footer" data-sly-use.globalHeader="com.aem.sample.core.models.FooterModel">
+	
+</div>
