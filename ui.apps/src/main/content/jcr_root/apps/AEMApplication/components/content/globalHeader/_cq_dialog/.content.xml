@@ -23,20 +23,20 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <logoHomePageUrl
+                            <logoImagePath
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                fieldDescription="Enter Logo Section Landing Page Url."
-                                fieldLabel="Logo Section Landing Page Url"
-                                name="./headerlogohomepageurl"
-                                rootPath="/content"/>
-                            <homePage
+                                fieldDescription="Enter Logo Image Path."
+                                fieldLabel="Logo Path"
+                                name="./logoImagePath"
+                                rootPath="/content/dam"/>
+                            <logoDestinationUrl
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                fieldDescription="Enter the  Section Landing page url."
-                                fieldLabel="Section Landing Page Url"
-                                name="./headerhomepageurl"
-                                rootPath="/content"/>
+                                fieldDescription="Enter logo destination URL"
+                                fieldLabel="Enter logo destination URL"
+                                name="./logoDestinationUrl"
+                                rootPath="/content/AEMApplication"/>
 							<itemLinks
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/AEMApplication/components/content/multifield"
@@ -44,7 +44,7 @@
                                 <field
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/foundation/form/fieldset"
-                                    name="./commonheaderlinks">
+                                    name="./headerLinks">
                                     <layout
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
@@ -66,7 +66,7 @@
 					                                fieldDescription="Enter the page url."
 					                                fieldLabel="Enter the page url"
 					                                name="./link"
-					                                rootPath="/link"/>
+					                                rootPath="/content"/>
                                             </items>
                                         </column>
                                     </items>
