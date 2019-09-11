@@ -1,67 +1,15 @@
- <style>
-.footer{
-  background: #152F4F;
-  color:white;
-  
-  .links{
-    ul {list-style-type: none;}
-    li a{
-      color: white;
-      transition: color .2s;
-      &:hover{
-        text-decoration:none;
-        color:#4180CB;
-        }
-    }
-  }  
-  .about-company{
-    i{font-size: 25px;}
-    a{
-      color:white;
-      transition: color .2s;
-      &:hover{color:#4180CB}
-    }
-  } 
-  .location{
-    i{font-size: 18px;}
-  }
-  .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
-}
-</style>
 
-<div data-sly-test="${wcmmode.edit && !wcmmode.preview}" class="aem-helper">
+<div data-sly-test="${wcmmode.edit && !wcmmode.preview}">
      Edit: Global footer
 </div>
-<div class="footer" data-sly-use.globalFooter="com.aem.sample.core.models.FooterModel">
-	<div class="mt-5 pt-5 pb-5 footer">
-	<a title="${globalFooter.getFooterTitle}">${globalFooter.getFooterTitle}</a>
-		<div class="container">
-		  <div class="row">
-		    <div class="col-lg-5 col-xs-12 about-company">    
-		      <h2>Capgemini Australia Pty</h2>
-		      <p class="pr-5 text-white-50"> A global leader in consulting, technology services and digital transformation, Capgemini is at the forefront of innovation to address the entire breadth of clients’ opportunities in the evolving world of cloud, digital and platforms. </p>
-		      <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
-		    </div>
-		    <div class="col-lg-3 col-xs-12 links">
-		      <h4 class="mt-lg-0 mt-sm-3">Links</h4>
-		        <ul class="m-0 p-0">
-		          <li>- <a href="#">www.capgemini.com</a></li>
-		          <li>- <a href="#">https://www.capgemini.com/service/invent/</a></li>
-		        </ul>
-		    </div>
-		    <div class="col-lg-4 col-xs-12 location">
-		      <h4 class="mt-lg-0 mt-sm-4">Location</h4>
-		      <p>16/595 Collins St, Melbourne VIC 3000</p>
-		      <p class="mb-0"><i class="fa fa-phone mr-3"></i>(541) 754-3010</p>
-		      <p><i class="fa fa-envelope-o mr-3"></i>info@capgemini.com</p>
-		    </div>
-		  </div>
-		  <div class="row mt-5">
-		    <div class="col copyright">
-		      <p class=""><small class="text-white-50">Capgemini © 2019. All Rights Reserved.</small></p>
-		    </div>
-		  </div>
-		</div>
+<div class="header" data-sly-use.globalFooter="com.aem.sample.core.models.GlobalFooterModel">
+	<a href="${globalFooter.logoDestinationUrl}"><img src="${globalFooter.logoImagePath}" height="70" width="70"></a>
+	<a class="cta-primary checkout-cta" title="${globalFooter.getFooterTitle}">${globalFooter.getFooterTitle}</a>
+	<div class="header-right">
+			<a class="cta-primary checkout-cta" title="${globalFooter.getFooterDescription}">${globalFooter.getFooterDescription}</a>
 	</div>
 </div>
+
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" />
+<sly data-sly-call="${clientLib.css @ categories='mfscom.component.globalfooter'}" />
 
