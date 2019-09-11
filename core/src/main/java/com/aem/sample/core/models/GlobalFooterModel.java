@@ -42,27 +42,30 @@ public class GlobalFooterModel {
 	@Inject
 	@Optional
 	private String footerTitle;
+	
+	@Inject
+	@Optional
+	private String footerDescription;
 
 	@Inject
 	@Optional
-	private Property headerLinks;
+	private Property footerLinks;
 
-	public List<HeaderLinksDTO> getHeaderLinks() {
-		LOGGER.debug("Inside getHeaderLinks method ");
-		final List<HeaderLinksDTO> headerLinksDTOList = new LinkedList<HeaderLinksDTO>();
+	public List<HeaderLinksDTO> getFooterLinks() {
+		LOGGER.debug("Inside getFooterLinks method ");
+		final List<HeaderLinksDTO> footerLinksDTOList = new LinkedList<HeaderLinksDTO>();
 		try {
-			final List<JSONObject> links = JSONHelper.getJSONListfromProperty(this.headerLinks);
+			final List<JSONObject> links = JSONHelper.getJSONListfromProperty(this.footerLinks);
 			for (JSONObject jsonObject : links) {
-				HeaderLinksDTO headerLinksDTO = new HeaderLinksDTO();
-				headerLinksDTO.setLink(jsonObject.optString("link"));
-				headerLinksDTO.setMenuLabel(jsonObject.optString("menuLabel"));
-				headerLinksDTOList.add(headerLinksDTO);
+				HeaderLinksDTO footerLinksDTO = new HeaderLinksDTO();
+				footerLinksDTO.setLink(jsonObject.optString("link"));
+				footerLinksDTO.setMenuLabel(jsonObject.optString("menuLabel"));
+				footerLinksDTOList.add(footerLinksDTO);
 			}
 		} catch (final Exception e) {
-			LOGGER.error("Exception occurred in getHeaderLinks method" + e);
+			LOGGER.error("Exception occurred in getFooterLinks method" + e);
 		}
-		LOGGER.debug("Existing from getHeaderLinks method with parameter :: {}", headerLinksDTOList);
-		return headerLinksDTOList;
+		return footerLinksDTOList;
 	}
 
 	/**
@@ -77,6 +80,13 @@ public class GlobalFooterModel {
 	 */
 	public String getFooterTitle() {
 		return footerTitle;
+	}
+	
+	/**
+	 * @return the footerDescription
+	 */
+	public String getFooterDescription() {
+		return footerDescription;
 	}
 
 	/**

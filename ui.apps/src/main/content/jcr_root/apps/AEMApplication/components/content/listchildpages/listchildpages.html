@@ -1,0 +1,11 @@
+
+<div class="childpage" pagelisting="com.aem.sample.core.models.PageListing">
+	<sly data-sly-list.iteratepagelist="${pagelisting.datafromModelList}">
+		<h2>Anand</h2>
+		<p>${iteratepagelist.title}</p>
+	</sly>
+	<h2>Anand Anand</h2>
+</div>
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" />
+<sly data-sly-call="${clientLib.css @ categories='mfscom.components.childpages'}" />
+
