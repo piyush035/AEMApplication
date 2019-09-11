@@ -13,7 +13,7 @@
         <items jcr:primaryType="nt:unstructured">
             <footer
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Footer Components"
+                jcr:title="Footer Component Properties"
                 sling:resourceType="granite/ui/components/foundation/container">
                 <layout
                     jcr:primaryType="nt:unstructured"
