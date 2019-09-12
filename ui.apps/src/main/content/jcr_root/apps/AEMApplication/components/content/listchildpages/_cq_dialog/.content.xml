@@ -23,12 +23,12 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <pagepath
+                            <pagePath
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
                                 fieldDescription="Enter path of page"
                                 fieldLabel="Enter path of page"
-                                name="./pagepath"
+                                name="./pagePath"
                                 rootPath="/content/AEMApplication"/>
                         </items>
                     </columns>
