@@ -9,6 +9,8 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import java.util.Iterator;
+
+import com.aem.sample.core.services.GetChildService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.slf4j.Logger;
@@ -34,38 +36,20 @@ public class PageListing {
 	@Inject
 	@Optional
 	private Property childLinks;
+	
+	@Inject
+    private GetChildService readService;
 
 	public List<String> getChildLinks() {
-		final List<String> childList = new ArrayList<String>();
-		
-		try {
-			//Not used: TO DO: To be removed once I write service
-			Resource resource = resourceResolver.getResource(pagePath);
-			if(resource!=null)
-			{
-				PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-				if(pageManager != null)
-				{
-					Page page = pageManager.getPage(pagePath);
-					if(page != null)
-					{
-						LOGGER.info("Inside getChildLinks");
-						
-						Iterator<Page> listChildPages = page.listChildren();
-							while (listChildPages.hasNext()) {
-								Page childPage = listChildPages.next();
-								if(childPage != null)
-								{
-									childList.add(childPage.getTitle());
-								}
-							}
-					}
-				}
-				
-			}			
+		List<String> result = null;
+		PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+		if(pageManager != null)
+		{
+			LOGGER.info("pageManager!=null Inside getChildLinks");
+			Page page = pageManager.getPage(pagePath);
+			result = readService.getChildren(page);
 		}
-		catch(Exception e) { e.printStackTrace();}
-		return childList;
+		return result;
 	}
 	
 	/**
