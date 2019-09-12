@@ -1,12 +1,8 @@
 package com.aem.sample.core.models;
-
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
-
 import javax.inject.Inject;
 import javax.jcr.Property;
-
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
@@ -33,14 +29,6 @@ public class PageListing {
 
 	@Inject
 	@Optional
-	private String logoImagePath;
-
-	@Inject
-	@Optional
-	private String logoDestinationUrl;
-	
-	@Inject
-	@Optional
 	private String pagePath;
 
 	@Inject
@@ -49,59 +37,41 @@ public class PageListing {
 
 	public List<String> getChildLinks() {
 		final List<String> childList = new ArrayList<String>();
-//		childList.add("Anand");
-//		childList.add("Rohit Mishra");
-//		
-//		return childList;
 		
 		try {
+			//Not used: TO DO: To be removed once I write service
 			Resource resource = resourceResolver.getResource(pagePath);
 			if(resource!=null)
 			{
 				PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
-				Page page = pageManager.getPage(pagePath);
-				LOGGER.info("Inside getChildLinks");
-				//Page parentPage = resource.adaptTo(Page.class);
-//				if(parentPage!=null)
-//				{
-					Iterator<Page> listChildPages = page.listChildren();
-					while (listChildPages.hasNext()) {
-						Page childPage = listChildPages.next();
+				if(pageManager != null)
+				{
+					Page page = pageManager.getPage(pagePath);
+					if(page != null)
+					{
+						LOGGER.info("Inside getChildLinks");
 						
-						childList.add(childPage.getTitle());
-						
+						Iterator<Page> listChildPages = page.listChildren();
+							while (listChildPages.hasNext()) {
+								Page childPage = listChildPages.next();
+								if(childPage != null)
+								{
+									childList.add(childPage.getTitle());
+								}
+							}
 					}
-					
-				//}
+				}
+				
 			}			
 		}
 		catch(Exception e) { e.printStackTrace();}
-		
-		//childList.add("Anand");
-		//childList.add("Maurya");
 		return childList;
 	}
 	
-	
-
 	/**
-	 * @return the logoImagePath
-	 */
-	public String getLogoImagePath() {
-		return logoImagePath;
-	}
-	
-	/**
-	 * @return the headerTitle
+	 * @return the pagePath
 	 */
 	public String getPagePath() {
 		return pagePath;
-	}
-
-	/**
-	 * @return the logoDestinationUrl
-	 */
-	public String getLogoDestinationUrl() {
-		return logoDestinationUrl;
 	}
 }
