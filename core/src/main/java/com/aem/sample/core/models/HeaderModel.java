@@ -4,18 +4,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.jcr.Property;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.commons.json.JSONObject;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.aem.sample.core.dto.HeaderLinksDTO;
+import com.aem.sample.core.dto.LinksDTO;
 import com.aem.sample.core.helper.JSONHelper;
 
 @Model(adaptables = { Resource.class })
@@ -44,24 +43,17 @@ public class HeaderModel {
 	private String headerTitle;
 
 	@Inject
-	@Optional
-	private Property headerLinks;
-
-	public List<HeaderLinksDTO> getHeaderLinks() {
-		LOGGER.debug("Inside getHeaderLinks method ");
-		final List<HeaderLinksDTO> headerLinksDTOList = new LinkedList<HeaderLinksDTO>();
-		try {
-			final List<JSONObject> links = JSONHelper.getJSONListfromProperty(this.headerLinks);
-			for (JSONObject jsonObject : links) {
-				HeaderLinksDTO headerLinksDTO = new HeaderLinksDTO();
-				headerLinksDTO.setLink(jsonObject.optString("link"));
-				headerLinksDTO.setMenuLabel(jsonObject.optString("menuLabel"));
-				headerLinksDTOList.add(headerLinksDTO);
-			}
-		} catch (final Exception e) {
-			LOGGER.error("Exception occurred in getHeaderLinks method" + e);
+	@Default(intValues = {})
+	private String[] headerLinks;
+	
+	public List<LinksDTO> getHeaderLinks() {
+		LOGGER.info("Inside getHeaderLinks method ");
+		final List<LinksDTO> headerLinksDTOList = new LinkedList<LinksDTO>();
+		for (final String json : headerLinks) {
+			LinksDTO linkDto = JSONHelper.getJSONObjectFromString(json, new LinksDTO());
+			headerLinksDTOList.add(linkDto);
 		}
-		LOGGER.debug("Existing from getHeaderLinks method with parameter :: {}", headerLinksDTOList);
+		LOGGER.info("Existing from getHeaderLinks method with parameter :: {}", headerLinksDTOList);
 		return headerLinksDTOList;
 	}
 
