@@ -23,32 +23,18 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-                            <logoImagePath
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                fieldDescription="Enter Footer Logo Image Path."
-                                fieldLabel="Footer Logo Path"
-                                name="./logoImagePath"
-                                rootPath="/content/dam"/>
-                            <logoDestinationUrl
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
-                                fieldDescription="Enter footer logo destination URL"
-                                fieldLabel="Enter footer logo destination URL"
-                                name="./logoDestinationUrl"
-                                rootPath="/content/AEMApplication"/>
-                            <footerTitle
-                                      jcr:primaryType="nt:unstructured"
-                                      sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                      fieldDescription="Footer Title"
-                                      fieldLabel="Footer Title"
-                                      name="./footerTitle"/>
+                        	<footerTitle
+                            	jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Footer Title"
+                                fieldLabel="Footer Title"
+                                name="./footerTitle"/>
                             <footerDescription
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                                fieldDescription="Footer Description"
-                                                fieldLabel="Footer Description"
-                                                name="./footerDescription"/>
+                            	jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Footer Description"
+                                fieldLabel="Footer Description"
+                                name="./footerDescription"/>
 							<itemLinks
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="/apps/AEMApplication/components/content/multifield"

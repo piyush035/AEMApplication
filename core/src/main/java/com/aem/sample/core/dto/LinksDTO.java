@@ -7,10 +7,10 @@ package com.aem.sample.core.dto;
  * @author Anand
  *
  */
-public class HeaderLinksDTO {
-	
+public class LinksDTO {
+
 	private String menuLabel;
-	
+
 	private String link;
 
 	/**
@@ -40,6 +40,9 @@ public class HeaderLinksDTO {
 	public void setLink(String link) {
 		this.link = link;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "LinksDTO [menuLabel=" + menuLabel + ", link=" + link + "]";
+	}
 }
