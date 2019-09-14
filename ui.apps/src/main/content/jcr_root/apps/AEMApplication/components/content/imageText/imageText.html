@@ -1,17 +1,16 @@
 
 
-<div data-sly-test="${wcmmode.edit && !wcmmode.preview}">
-     Edit: Global header
+<div class="container" data-sly-use.imageText="com.aem.sample.core.models.ImageTextModel">
+  <a><img src="${imageText.imagePath}"alt="Nature" style="width:100%;"></a>
+  <div>
+  	<div data-sly-test="imageText.alignmentText == left}" data-sly-unwrap> 
+  		<a class="text-block-left" title="${imageText.alignmentText}">this is left text</a>
+  	</div> 
+  	<div data-sly-test="imageText.alignmentText == right" data-sly-unwrap> 
+  		<a class="text-block-right" title="${imageText.alignmentText}">this is right text</a>
+  	</div>  
+  </div>
 </div>
-<div class="header" data-sly-use.globalHeader="com.aem.sample.core.models.HeaderModel">
-	<a href="${globalHeader.logoDestinationUrl}"><img src="${globalHeader.logoImagePath}" height="70" width="70"></a>
-	<a class="cta-primary checkout-cta" title="${globalHeader.getHeaderTitle}">${globalHeader.getHeaderTitle}</a>
-	<div class="header-right">
-		<sly data-sly-list.option="${globalHeader.headerLinks}">
-			<a href="${option.link}" class="cta-primary checkout-cta" title="${option.menuLabel}">${option.menuLabel}</a>
-		</sly>
-	</div>
-</div>
+
 <sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" />
 <sly data-sly-call="${clientLib.css @ categories='mfscom.components.globalHeader'}" />
-

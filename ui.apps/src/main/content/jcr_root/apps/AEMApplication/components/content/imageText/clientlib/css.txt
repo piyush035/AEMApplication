@@ -1,2 +1,2 @@
 #base=styles
-globalHeader.css
+imageText.css
