@@ -24,15 +24,17 @@ public class GetChildServiceImpl implements GetChildService {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(GetChildServiceImpl.class);
 	
+	final int  i = 1;
+	
 	/**
 	 * Overridden method which will get all children of the input page
 	 */
 	@Override
 	public List<String> getChildren(Page page) {
-		
+			
 		LOGGER.info("Inside getChildLinks");
 		final List<String> childList = new ArrayList<String>();
-				
+		
 				try {
 					if(page != null)
 					{
