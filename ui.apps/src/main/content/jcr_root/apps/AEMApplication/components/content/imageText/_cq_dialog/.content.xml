@@ -100,6 +100,14 @@
                                         jcr:primaryType="nt:unstructured"
                                         text="right"
                                         value="right"/>
+                                    <top
+                                        jcr:primaryType="nt:unstructured"
+                                        text="top"
+                                        value="top"/>
+                                    <bottom
+                                        jcr:primaryType="nt:unstructured"
+                                        text="bottom"
+                                        value="bottom"/>
                                 </items>
                             </alignmentText>
                         </items>
