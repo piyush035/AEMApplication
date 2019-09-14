@@ -1,5 +1,6 @@
-
-
+<div data-sly-test="${wcmmode.edit && !wcmmode.preview}">
+     Edit: Global footer
+</div>
 <div class="container" data-sly-use.imageText="com.aem.sample.core.models.ImageTextModel">
   <a><img src="${imageText.imagePath}"alt="Nature" style="width:100%;"></a>
   <div>
@@ -11,6 +12,3 @@
   	</div>  
   </div>
 </div>
-
-<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" />
-<sly data-sly-call="${clientLib.css @ categories='mfscom.components.globalHeader'}" />
