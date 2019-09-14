@@ -1,0 +1,15 @@
+<div data-sly-test="${wcmmode.edit}"  data-sly-unwrap>Edit column control Component</div>
+
+<div class="column-control container-xl ${(wcmmode.edit) ? 'edit-mode' : 'view-mode'} clearfix">
+	<div class="container no-padding">
+		<div data-sly-test="${ properties.colType == '8-4-col'}" >
+			<div data-sly-resource="${ @path='8-4-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-8"></div>
+			<div data-sly-resource="${ @path='8-4-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-4"></div>
+		</div>
+
+		<div data-sly-test="${ properties.colType == '4-8-col'}" >
+			<div data-sly-resource="${ @path='4-8-col-1', resourceType='/libs/foundation/components/parsys'}" class="col-4"></div>
+			<div data-sly-resource="${ @path='4-8-col-2', resourceType='/libs/foundation/components/parsys'}" class="col-8"></div>
+		</div>
+	</div>
+</div>
