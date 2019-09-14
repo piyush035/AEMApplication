@@ -9,7 +9,6 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import com.aem.sample.core.models.PageListing;
 import com.aem.sample.core.services.GetChildService;
 import com.day.cq.wcm.api.Page;
