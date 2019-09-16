@@ -53,3 +53,14 @@ body {
     float: none;
   }
 }
+.header-morning {
+  	background-color: orange;
+}
+
+.header-afternoon {
+  	background-color: green;
+}
+
+.header-evening {
+  	background-color: dodgerblue;
+}
