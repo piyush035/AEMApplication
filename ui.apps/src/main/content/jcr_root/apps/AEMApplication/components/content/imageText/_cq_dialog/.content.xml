@@ -30,90 +30,22 @@
                                 fieldLabel="Image Path"
                                 name="./imagePath"
                                 rootPath="/content/dam"/>
-                            <text
+                            <title
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                fieldDescription="Label Text"
-                                fieldLabel="Label Text"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Title text goes here."
+                                fieldLabel="Title Text"
                                 useFixedInlineToolbar="{Boolean}true"
-                                name="./text">
-                                <rtePlugins jcr:primaryType="nt:unstructured">
-                                            <links
-                                                jcr:primaryType="nt:unstructured"
-                                                features="*"/>
-                                            <misctools
-                                                jcr:primaryType="nt:unstructured"
-                                                features="*"/>
-                                            <table
-                                                jcr:primaryType="nt:unstructured"
-                                                features="[\0]">
-                                                <hiddenHeaderConfig
-													jcr:primaryType="nt:unstructured"
-                                                    hiddenHeaderClassName="cq-wcm-foundation-aria-visuallyhidden"
-                                                    hiddenHeaderEditingCSS="coral-RichText-hiddenHeader--editing"/>
-                                            </table>
-                                </rtePlugins>
-                                <uiSettings jcr:primaryType="nt:unstructured">
-                                            <cui jcr:primaryType="nt:unstructured">
-                                                <inline
-                                                    jcr:primaryType="nt:unstructured"
-                                                    toolbar="[misctools#sourceedit,format#bold,format#italic,format#underline,#paraformat,image#imageProps,#justify,#lists,links#modifylink,links#unlink,spellcheck#checktext]">
-                                                    <popovers jcr:primaryType="nt:unstructured">
-                                                        <justify
-															jcr:primaryType="nt:unstructured"
-                                                            items="[justify#justifyleft,justify#justifycenter,justify#justifyright]"
-                                                            ref="justify"/>
-                                                        <lists
-                                                            jcr:primaryType="nt:unstructured"
-                                                            items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
-                                                            ref="lists"/>
-                                                        <paraformat
-															jcr:primaryType="nt:unstructured"
-                                                            items="paraformat:getFormats:paraformat-pulldown"
-                                                            ref="paraformat"/>
-                                                    </popovers>
-                                                </inline>
-                                            </cui>
-                                </uiSettings>
-                                <htmlRules jcr:primaryType="nt:unstructured">
-                                            <docType jcr:primaryType="nt:unstructured">
-                                                <typeConfig
-                                                    jcr:primaryType="nt:unstructured"
-                                                    useSemanticMarkup="{Boolean}true"/>
-                                            </docType>
-                                </htmlRules>
-                            </text>
-							<colorPicker
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
-                                fieldDescription="Color Picker"
-                                fieldLabel="Color Picker"
-                                name="./colorPicker"/>
-                            <alignmentText
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/form/select"
-                                fieldDescription="Enter alignment of text"
-                                fieldLabel="Text Alignment options"
-                                name="./alignmentText">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <left
-                                        jcr:primaryType="nt:unstructured"
-                                        text="left"
-                                        value="left"/>
-                                    <right
-                                        jcr:primaryType="nt:unstructured"
-                                        text="right"
-                                        value="right"/>
-                                    <top
-                                        jcr:primaryType="nt:unstructured"
-                                        text="top"
-                                        value="top"/>
-                                    <bottom
-                                        jcr:primaryType="nt:unstructured"
-                                        text="bottom"
-                                        value="bottom"/>
-                                </items>
-                            </alignmentText>
+                                name="./title">
+                            </title>
+                            <description
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                    fieldDescription="Description text goes here."
+                                    fieldLabel="Description Text"
+                                    useFixedInlineToolbar="{Boolean}true"
+                                    name="./description">
+                            </description>
                         </items>
                     </columns>
                 </items>

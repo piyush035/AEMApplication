@@ -4,11 +4,11 @@
 <div class="container" data-sly-use.imageText="com.aem.sample.core.models.ImageTextModel">
   <a><img src="${imageText.imagePath}"alt="Nature" style="width:100%;"></a>
   <div>
-  	<div data-sly-test="${imageText.alignmentText == left}" data-sly-unwrap> 
-  		<a class="text-block-left" title="${imageText.alignmentText}">this is left text</a>
+  	<div data-sly-test="${imageText.alignmentText == 'left'}"> 
+  		<a class="text-block-left" title="${imageText.alignmentText}">${imageText.getText}</a>
   	</div> 
-  	<div data-sly-test="${imageText.alignmentText == right}" data-sly-unwrap> 
-  		<a class="text-block-right" title="${imageText.alignmentText}">this is right text</a>
+  	<div data-sly-test="${imageText.alignmentText == 'right'}"> 
+  		<a class="text-block-right" title="${imageText.alignmentText}">${imageText.getText}</a>
   	</div>  
   </div>
 </div>
