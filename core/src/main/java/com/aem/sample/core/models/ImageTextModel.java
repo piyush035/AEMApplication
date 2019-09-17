@@ -19,11 +19,11 @@ public class ImageTextModel {
 
 	@Inject
 	@Optional
-	private String text;
+	private String title;
 	
 	@Inject
 	@Optional
-	private String alignmentText;
+	private String description;
 
 	/**
 	 * @return the imagePath
@@ -33,16 +33,16 @@ public class ImageTextModel {
 	}
 	
 	/**
-	 * @return the text
+	 * @return the title
 	 */
-	public String getText() {
-		return text;
+	public String getTitle() {
+		return title;
 	}
 
 	/**
-	 * @return the alignmentText
+	 * @return the description
 	 */
-	public String getAlignmentText() {
-		return alignmentText;
+	public String getDescription() {
+		return description;
 	}
 }

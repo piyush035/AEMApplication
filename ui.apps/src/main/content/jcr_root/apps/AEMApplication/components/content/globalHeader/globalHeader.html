@@ -3,7 +3,7 @@
 <div data-sly-test="${wcmmode.edit && !wcmmode.preview}">
      Edit: Global header
 </div>
-<div data-sly-use.globalHeader="com.aem.sample.core.models.HeaderModel">
+<!-- <div data-sly-use.globalHeader="com.aem.sample.core.models.HeaderModel">
 	<a href="${globalHeader.logoDestinationUrl}"><img src="${globalHeader.logoImagePath}" height="70" width="70"></a>
 	<a class="cta-primary checkout-cta" title="${globalHeader.getHeaderTitle}">${globalHeader.getHeaderTitle}</a>
 	<div class="header-right">
@@ -11,7 +11,22 @@
 			<a href="${option.link}" class="cta-primary checkout-cta" title="${option.menuLabel}">${option.menuLabel}</a>
 		</sly>
 	</div>
-</div>
+</div> -->
 <sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" />
 <sly data-sly-call="${clientLib.css @ categories='mfscom.components.globalHeader'}" />
 
+<div class="top-bar" data-sly-use.globalHeader="com.aem.sample.core.models.HeaderModel">
+    	<div class="top-navigation-container">
+            <div class="topnavigation-logo">
+				<a href="${globalHeader.logoDestinationUrl}"><img src="${globalHeader.logoImagePath}" height="32" width="90"></a>
+        	</div>
+            <nav class="topnavigation-links" >
+            <a class="linkclassdefault" id="a" title="${globalHeader.getHeaderTitle}">${globalHeader.getHeaderTitle}</a>
+            	<ul class="topnav-list" data-sly-list.option="${globalHeader.headerLinks}">
+                	<li class="linkclass">
+                      <a title="${option.menuLabel}">${option.menuLabel}</a>    
+					</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
