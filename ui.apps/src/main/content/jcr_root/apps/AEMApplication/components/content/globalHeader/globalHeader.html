@@ -6,10 +6,10 @@
 <sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" />
 <sly data-sly-call="${clientLib.css @ categories='mfscom.components.globalHeader'}" />
 
-<div class="top-bar" data-sly-use.globalHeader="com.aem.sample.core.models.HeaderModel">
+<!-- <div class="top-bar" data-sly-use.globalHeader="com.aem.sample.core.models.HeaderModel">
     	<div class="top-navigation-container">
             <div class="topnavigation-logo">
-				<a href="${globalHeader.logoDestinationUrl}"><img src="${globalHeader.logoImagePath}" height="32" width="90"></a>
+				<a href="${globalHeader.logoDestinationUrl}"><img src="${globalHeader.logoImagePath}" height="32" width="92"></a>
         	</div>
             <nav class="topnavigation-links" >
             <a class="linkclassdefault" id="a" title="${globalHeader.getHeaderTitle}">${globalHeader.getHeaderTitle}</a>
@@ -20,4 +20,15 @@
                 </ul>
             </nav>
         </div>
-    </div>
+ </div> -->
+ 
+ <div class="header" data-sly-use.globalHeader="com.aem.sample.core.models.HeaderModel">
+  <a class="logo" href="${globalHeader.logoDestinationUrl}"><img class="centerimg" src="${globalHeader.logoImagePath}" height="32" width="92"></a>
+  <div class="header-center">
+  	<a class="linkclassbold"title="${globalHeader.getHeaderTitle}">${globalHeader.getHeaderTitle}</a>
+    <a >Student</a>
+    <a >Alumni & Giving</a>
+    <a >Library</a>
+    <a >RMIT Online</a>
+  </div>
+</div>
