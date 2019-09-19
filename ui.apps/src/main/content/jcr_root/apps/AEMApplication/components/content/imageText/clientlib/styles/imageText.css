@@ -1,23 +1,65 @@
-.container {
-  position: relative;
-  font-family: Arial;
+.span4 img {
+    margin-right: 0px;
 }
+.span4 .img-left {
+    float: left;
+}
+.span4 .backgroundcolor{
+    background-color: red;
+}
+.center {
+  vertical-align: middle;
+}
+.col-center {
+  float: none;
+  margin: 0 auto;
+}
+.img-right {
+    float: right;
+}
+.txtmediaheading {
+    font-size: 20px;
+    line-height: 1.2;
+    font-family: "Arial", sans-serif;
+    color: #000054;
+    text-align: center;
+    padding: 60px 0px 0px 0px;
 
-.text-block-right {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: black;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
 }
-.text-block-left {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background-color: black;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
+.comp-block{
+	
+}
+.paratext {
+    color: #333333;
+    font-size: 16px;
+    font-family: "Arial", sans-serif;
+    line-height: 24px;
+    font-weight: normal;
+    text-align: center;
+}
+@media screen and (max-width: 800px) {
+  .img-right {
+    float: left;
+    width: 100%;
+  }
+  .comp-block{
+	height: 700px;
+	width: 700px;
+	}
+	.txtmediaheading {
+	    font-size: 20px;
+	    font-family: "Arial", sans-serif;
+	    color: #000054;
+	    text-align: left;
+	    margin: 380px 10px 0px 10px;
+
+	}
+	.paratext {
+	    color: #333333;
+	    font-size: 16px;
+	    font-family: "Arial", sans-serif;
+	    font-weight: normal;
+	    text-align: left;
+	    padding: 10px 10px 0px 10px;
+	}
 }
