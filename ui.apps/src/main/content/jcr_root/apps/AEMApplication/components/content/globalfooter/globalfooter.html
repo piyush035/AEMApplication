@@ -1,17 +1,195 @@
 <div data-sly-test="${wcmmode.edit && !wcmmode.preview}">
      Edit: Global footer
 </div>
-<div class="mt-5 pt-5 pb-5 footer" data-sly-use.globalFooter="com.aem.sample.core.models.GlobalFooterModel">
-	<div class="container">
-		<div class="row">
-	    	<div class="col-lg-5 col-xs-12 about-company">
-	      		<h2>${globalFooter.getFooterTitle}</h2>
-	      		<p class="pr-5 text-white-50">${globalFooter.getFooterDescription} </p>
-	      		<p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
-	    	</div>
-	    	<div class="header-right">
-				<a class="cta-primary checkout-cta" title="${globalFooter.getFooterDescription}">${globalFooter.getFooterDescription}</a>
-			</div>
-		</div>
-	</div>
-</div>
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" />
+<sly data-sly-call="${clientLib.css @ categories='AEMApplication.component.globalfooter'}" />
+
+<footer class="page-footer font-small indigon footer-bar" data-sly-use.globalFooter="com.aem.sample.core.models.GlobalFooterModel">
+
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-xs-2 mx-auto">
+
+        <!-- Links -->
+        <a class="logo" href="${globalFooter.logoDestinationUrl}"><img src="${globalFooter.logoImagePath}" height="32" width="92"></a>
+
+        <ul class="list-unstyled footer-subtext">
+          <li>
+            <a href="#!">Events</a>
+          </li>
+          <li>
+            <a href="#!">Library</a>
+          </li>
+          <li>
+            <a href="#!">Maps</a>
+          </li>
+          <li>
+            <a href="#!">Carrers</a>
+          </li>
+          <li>
+            <a href="#!">Contacts</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+
+      <!-- Grid column -->
+      <div class="col-xs-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4 footerheading">Study with Us</h5>
+
+        <ul class="list-unstyled footer-subtext">
+          <li>
+            <a href="#!">Levels of study</a>
+          </li>
+          <li>
+            <a href="#!">Study online</a>
+          </li>
+          <li>
+            <a href="#!">Applying to RMIT</a>
+          </li>
+          <li>
+            <a href="#!">Parents</a>
+          </li>
+          <li>
+            <a href="#!">Careers advisors</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+
+      <!-- Grid column -->
+      <div class="col-xs-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4 footerheading">Life at RMIT</h5>
+
+        <ul class="list-unstyled footer-subtext">
+          <li>
+            <a href="#!">Why choose RMIT?</a>
+          </li>
+          <li>
+            <a href="#!">Study experience</a>
+          </li>
+          <li>
+            <a href="#!">Student life</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+
+      <!-- Grid column -->
+      <div class="col-xs-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4 footerheading">Research</h5>
+
+        <ul class="list-unstyled footer-subtext">
+          <li>
+            <a href="#!">Research expertise</a>
+          </li>
+          <li>
+            <a href="#!">Research centres & groups</a>
+          </li>
+          <li>
+            <a href="#!">Partnerships & commercialisations</a>
+          </li>
+          <li>
+            <a href="#!">PhDs & other research degrees</a>
+          </li>
+          <li>
+            <a href="#!">Find research</a>
+          </li>
+          <li>
+            <a href="#!">Contacts</a>
+          </li>
+        </ul>
+
+      </div>
+      
+      <div class="col-xs-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4 footerheading">For business</h5>
+
+        <ul class="list-unstyled footer-subtext">
+          <li>
+            <a href="#!">Recruit students and graduates</a>
+          </li>
+          <li>
+            <a href="#!">Staff development and training</a>
+          </li>
+          <li>
+            <a href="#!">Collaborate with RMIT</a>
+          </li>
+          <li>
+            <a href="#!">Research partnerships</a>
+          </li>
+          <li>
+            <a href="#!">Facilities and equipment services</a>
+          </li>
+          <li>
+            <a href="#!">Contact Industry Engagement</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col-xs-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4 footerheading">About</h5>
+
+        <ul class="list-unstyled footer-subtext">
+          <li>
+            <a href="#!">Our strategy</a>
+          </li>
+          <li>
+            <a href="#!">Governance and management</a>
+          </li>
+          <li>
+            <a href="#!">Our education</a>
+          </li>
+          <li>
+            <a href="#!">Academic schools</a>
+          </li>
+          <li>
+            <a href="#!">Respect for Australian Indigenous cultures</a>
+          </li>
+          <li>
+            <a href="#!">Our locations and facilities</a>
+          </li>
+          <li>
+            <a href="#!">Giving to RMIT</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+<hr/>
+
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+    <a> Copyright © 2019 RMIT University | Terms | Privacy | Accessibility | Website feedback | ABN 49 781 030 034 | CRICOS provider number: 00122A | RTO Code: 3046 | Open Universities Australia</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->

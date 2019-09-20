@@ -23,6 +23,20 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
+                          <logoImagePath
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                            fieldDescription="Enter Logo Image Path."
+                                            fieldLabel="Logo Path"
+                                            name="./logoImagePath"
+                                            rootPath="/content/dam"/>
+                                        <logoDestinationUrl
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                            fieldDescription="Enter logo destination URL"
+                                            fieldLabel="Enter logo destination URL"
+                                            name="./logoDestinationUrl"
+                                            rootPath="/content/AEMApplication"/>
                         	<footerTitle
                             	jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/textfield"

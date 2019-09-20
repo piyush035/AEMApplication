@@ -29,6 +29,10 @@ public class GlobalFooterModel {
 	/** The resource resolver. */
 	@Inject
 	private ResourceResolver resourceResolver;
+	
+	@Inject
+	@Optional
+	private String logoImagePath;
 
 	@Inject
 	@Optional
@@ -41,6 +45,10 @@ public class GlobalFooterModel {
 	@Inject
 	@Default(intValues = {})
 	private String[] footerLinks;
+	
+	@Inject
+	@Optional
+	private String logoDestinationUrl;
 
 	public List<LinksDTO> getFooterLinks() {
 		LOGGER.debug("Inside getFooterLinks method ");
@@ -51,19 +59,30 @@ public class GlobalFooterModel {
 		}
 		return footerLinksDTOList;
 	}
-
+	/**
+	 * @return the logoImagePath
+	 */
+	public String getLogoImagePath() {
+		return logoImagePath;
+	}
 	/**
 	 * @return the footerTitle
 	 */
 	public String getFooterTitle() {
 		return footerTitle;
 	}
-
+	
 	/**
 	 * @return the footerDescription
 	 */
 	public String getFooterDescription() {
 		return footerDescription;
+	}
+	/**
+	 * @return the logoDestinationUrl
+	 */
+	public String getLogoDestinationUrl() {
+		return logoDestinationUrl;
 	}
 
 }
