@@ -1,0 +1,32 @@
+<div data-sly-test="${wcmmode.edit && !wcmmode.preview}">
+     Edit: Image Text Right
+</div>
+<!-- <div class="container" data-sly-use.imageText="com.aem.sample.core.models.ImageTextModel">
+  <a><img src="${imageText.imagePath}"alt="Nature" style="width:100%;"></a>
+  <div>
+  	<div data-sly-test="${imageText.alignmentText == 'left'}"> 
+  		<a class="text-block-left" title="${imageText.alignmentText}">${imageText.getText}</a>
+  	</div> 
+  	<div data-sly-test="${imageText.alignmentText == 'right'}"> 
+  		<a class="text-block-right" title="${imageText.alignmentText}">${imageText.getText}</a>
+  	</div>  
+  </div>
+</div> -->
+
+<div class="container" data-sly-use.imageTextright="com.aem.sample.core.models.ImageTextRightModel">
+      <div class="row">
+        <div class="span4 comp-block" style='background-color: #f5f5f5'>
+	        <a class="img-left"><img src="${imageTextright.imagePath}"></a>
+	        <div class="center">
+		        <div class="txtmediaheading">
+		        	<a title="${imageTextright.getTitle}">${imageText.getTitle}</a>
+				</div>
+				<div class="paratext">
+					<a title="${imageTextright.getDescription}">${imageText.getDescription}</a>
+		        </div>
+		        </div>
+	        </div>
+     </div>
+    </div>
+    
+</div>

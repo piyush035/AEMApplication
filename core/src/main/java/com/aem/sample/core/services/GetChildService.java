@@ -1,5 +1,4 @@
 package com.aem.sample.core.services;
-
 import java.util.List;
 
 import com.day.cq.wcm.api.Page;

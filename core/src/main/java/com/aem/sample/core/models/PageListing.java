@@ -11,6 +11,7 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import java.util.Iterator;
 
 import com.aem.sample.core.services.GetChildService;
+import com.aem.sample.core.services.ReadJsonService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.slf4j.Logger;
@@ -36,10 +37,17 @@ public class PageListing {
 	@Inject
 	@Optional
 	private Property childLinks;
-	
-	@Inject
-    private GetChildService readService;
 
+	@Inject
+  private GetChildService readService;
+
+	@Inject
+  private ReadJsonService jsonService;
+
+	@Inject
+	@Optional
+	private Property allRecords;
+	//getChildLinks it reads all the childs of the page
 	public List<String> getChildLinks() {
 		List<String> result = null;
 		PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
@@ -51,7 +59,12 @@ public class PageListing {
 		}
 		return result;
 	}
-	
+	//getChildLinks it reads all the records from rest service
+	public String getAllRecords() {
+		String result = jsonService.getData();
+		return result;
+	}
+
 	/**
 	 * @return the pagePath
 	 */

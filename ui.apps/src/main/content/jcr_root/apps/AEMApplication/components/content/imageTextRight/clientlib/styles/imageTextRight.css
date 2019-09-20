@@ -38,12 +38,11 @@
     text-align: center;
 }
 @media screen and (max-width: 800px) {
-  .img-right {
-    float: left;
+  .img-left {
     width: 100%;
   }
   .comp-block{
-	height: 700px;
+	height: 600px;
 	width: 700px;
 	}
 	.txtmediaheading {
