@@ -11,6 +11,7 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import java.util.Iterator;
 
 import com.aem.sample.core.services.GetChildService;
+import com.aem.sample.core.services.ReadCSVService;
 import com.aem.sample.core.services.ReadJsonService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
@@ -39,14 +40,22 @@ public class PageListing {
 	private Property childLinks;
 
 	@Inject
-  private GetChildService readService;
+	private GetChildService readService;
 
 	@Inject
-  private ReadJsonService jsonService;
+	private ReadJsonService jsonService;
+	
+	@Inject
+	private ReadCSVService csvReadService;
 
 	@Inject
 	@Optional
 	private Property allRecords;
+	
+	@Inject
+	@Optional
+	private Property countries;
+	
 	//getChildLinks it reads all the childs of the page
 	public List<String> getChildLinks() {
 		List<String> result = null;
@@ -59,9 +68,22 @@ public class PageListing {
 		}
 		return result;
 	}
-	//getChildLinks it reads all the records from rest service
+	//getAllRecords it reads all the records from rest service
 	public String getAllRecords() {
 		String result = jsonService.getData();
+		return result;
+	}
+	
+	/**
+	 * @return the All the countries
+	 */
+	public List<String> getCountries() {
+		List<String> result = null;
+		
+		LOGGER.info("getAllCountries Inside getChildLinks");
+		
+		result = csvReadService.getCountries();
+		
 		return result;
 	}
 

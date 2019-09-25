@@ -1,12 +1,18 @@
 
 <div class="childpage" data-sly-use.childpage="com.aem.sample.core.models.PageListing">
 	<a title="${childpage.getPagePath}">${childpage.getPagePath}</a>
-	<a title="${childpage.getAllRecords}">${childpage.getAllRecords}</a>
-	<div class="header-right">
+	<!-- <a title="${childpage.getAllRecords}">${childpage.getAllRecords}</a> -->
+	
+	<div class="childpage-right">
+		<sly data-sly-list.country="${childpage.getCountries}">
+			<a class="cta-primary checkout-cta" title="${country}">${country}</a>
+		</sly>
+	</div>
+	<!-- <div class="header-right">
 		<sly data-sly-list.child="${childpage.childLinks}">
 			<a class="cta-primary checkout-cta" title="${child}">${child}</a>
 		</sly>
-	</div>
+	</div> -->
 </div>
 <sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" />
 <sly data-sly-call="${clientLib.css @ categories='mfscom.components.globalHeader'}" />

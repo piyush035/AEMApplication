@@ -16,30 +16,30 @@ import com.day.cq.wcm.api.PageManager;
 
 /**
  *
- * 
+ *
  * Implementation of ReadJsonService
  */
 @Component(immediate = true, service = GetChildService.class)
 public class GetChildServiceImpl implements GetChildService {
-	
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(GetChildServiceImpl.class);
-	
+
 	final int  i = 1;
-	
+
 	/**
 	 * Overridden method which will get all children of the input page
 	 */
 	@Override
 	public List<String> getChildren(Page page) {
-			
+
 		LOGGER.info("Inside getChildLinks");
 		final List<String> childList = new ArrayList<String>();
-		
+
 				try {
 					if(page != null)
 					{
 						LOGGER.info("page!=null Inside getChildLinks");
-								
+
 						Iterator<Page> listChildPages = page.listChildren();
 						while (listChildPages.hasNext()) {
 								Page childPage = listChildPages.next();
@@ -50,7 +50,7 @@ public class GetChildServiceImpl implements GetChildService {
 						}
 					}
 				}
-				catch(Exception e) { 
+				catch(Exception e) {
 					LOGGER.info("Inside Exception");
 					e.printStackTrace();
 				}
