@@ -11,6 +11,6 @@ package com.aem.sample.core.constants;
   */
  public final class AppConstants {
 
- 	public static final String URL = "https://jsonplaceholder.typicode.com/todos/";
+ 	public static final String requestURL = "https://jsonplaceholder.typicode.com/todos/";
 
  }

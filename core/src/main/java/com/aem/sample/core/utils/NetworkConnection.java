@@ -12,7 +12,7 @@ import javax.net.ssl.HttpsURLConnection;
  *
  * This class has all the Network related calls
  */
-public final class Network {
+public final class NetworkConnection {
 
 	private static final String USER_AGENT = "Mozilla/69.0";
 

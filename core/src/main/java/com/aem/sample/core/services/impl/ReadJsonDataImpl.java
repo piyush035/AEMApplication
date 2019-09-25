@@ -1,9 +1,9 @@
 package com.aem.sample.core.services.impl;
 
 import org.osgi.service.component.annotations.Component;
-import static com.aem.sample.core.constants.AppConstants.URL;
+import static com.aem.sample.core.constants.AppConstants.requestURL;
 import com.aem.sample.core.services.ReadJsonService;
-import com.aem.sample.core.utils.Network;
+import com.aem.sample.core.utils.NetworkConnection;
 
 /**
  * @author Anand
@@ -20,7 +20,7 @@ public class ReadJsonDataImpl implements ReadJsonService {
 	@Override
 	public String getData() {
 
-		String response = Network.readJson(URL);
+		String response = NetworkConnection.readJson(requestURL);
 
 		return response;
 	}
