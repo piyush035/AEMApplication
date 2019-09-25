@@ -30,9 +30,6 @@ public class ReadCSVServiceImpl implements ReadCSVService {
 
 		LOGGER.info("Inside getCountries");
 		final List<String> countryList = new ArrayList<String>();
-
-//		countryList.add("Anand");
-//		countryList.add("Maurya");
 		
 		String csvFile = "/Users/anand/Desktop/countries.csv";
         String line = "";
