@@ -5,6 +5,8 @@ import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.aem.sample.core.services.ReadCSVService;
+import com.aem.sample.core.utils.JCRUtility;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -55,56 +57,30 @@ public class ReadCSVServiceImpl implements ReadCSVService {
         ResourceResolver resolver = null;
         Resource resource=null;
         
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-        	LOGGER.debug("before resolver cc");
-        	//resolver = factory.getAdministrativeResourceResolver(null);
-        	
-        	
-        	final Map<String, Object> param = new HashMap<String, Object>();
-            param.put(ResourceResolverFactory.SUBSERVICE, "aemapplication");
-            try {
-            	LOGGER.debug("resolverFactory "+resolverFactory);
-                resolver = resolverFactory.getServiceResourceResolver(param);
-            } catch (final org.apache.sling.api.resource.LoginException e) {
-                LOGGER.error("LoginException occurred in getResourceResolver method", e);
-            }           
-        	LOGGER.debug("value of resolver"+resolver);
+       // try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+        	LOGGER.debug("before resolver a");
+        	resolver = JCRUtility.getResourceResolver(resolverFactory);
             session = resolver.adaptTo(Session.class);
-            LOGGER.debug("value of session"+session);
-            
-            LOGGER.debug("after resolver a");
+            LOGGER.debug("after resolver a :: "+resolver);
             resource = resolver.getResource("/content/dam/AEMApplication/employeeDetails");
-
-
-            Node node = resource.adaptTo(Node.class);
-            
-            
-
-            while ((line = br.readLine()) != null) {
-
-                // use comma as separator
-                String[] employee = line.split(cvsSplitBy);
-                
-                String employeeId = employee[4];
-                
-				Node newNode = node.addNode(employeeId, "nt:unstructured");
-				
-				empList.add(employee[5]);
-            }
-            session.save();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            empList.add("IOException");
-        } 
-        catch (RepositoryException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			empList.add("RepositoryException");
-		}
-        
-        empList.add("Anand");
-        empList.add("fffffjhjgjgh");
+		/*
+		 * Node node = resource.adaptTo(Node.class); while ((line = br.readLine()) !=
+		 * null) {
+		 * 
+		 * // use comma as separator String[] employee = line.split(cvsSplitBy);
+		 * 
+		 * String employeeId = employee[4];
+		 * 
+		 * Node newNode = node.addNode(employeeId, "nt:unstructured");
+		 * 
+		 * empList.add(employee[5]); } session.save();
+		 * 
+		 * } catch (IOException e) { e.printStackTrace(); empList.add("IOException"); }
+		 * catch (RepositoryException e) { // TODO Auto-generated catch block
+		 * e.printStackTrace(); empList.add("RepositoryException"); }
+		 * 
+		 * empList.add("Anand"); empList.add("fffffjhjgjgh");
+		 */
 
 		return empList;
 	}
