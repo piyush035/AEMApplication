@@ -20,6 +20,7 @@ import javax.jcr.RepositoryException;
 
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
+import org.omg.CORBA.SystemException;
 import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
 
@@ -35,7 +36,7 @@ public class ReadCSVServiceImpl implements ReadCSVService {
 
 	
 	@Reference    
-    private ResourceResolverFactory factory;
+    private ResourceResolverFactory resolverFactory;
 	/**
 	 * Overridden method which will read the JSON data via an HTTP GET call
 	 */
@@ -55,11 +56,18 @@ public class ReadCSVServiceImpl implements ReadCSVService {
         Resource resource=null;
         
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-        	LOGGER.debug("before resolver a");
+        	LOGGER.debug("before resolver cc");
         	//resolver = factory.getAdministrativeResourceResolver(null);
-        	Map<String, Object> param = new HashMap<String, Object>();        
-            param.put(ResourceResolverFactory.USER, "aemapplication");
-            resolver = factory.getServiceResourceResolver(param);            
+        	
+        	
+        	final Map<String, Object> param = new HashMap<String, Object>();
+            param.put(ResourceResolverFactory.SUBSERVICE, "aemapplication");
+            try {
+            	LOGGER.debug("resolverFactory "+resolverFactory);
+                resolver = resolverFactory.getServiceResourceResolver(param);
+            } catch (final org.apache.sling.api.resource.LoginException e) {
+                LOGGER.error("LoginException occurred in getResourceResolver method", e);
+            }           
         	LOGGER.debug("value of resolver"+resolver);
             session = resolver.adaptTo(Session.class);
             LOGGER.debug("value of session"+session);
@@ -88,13 +96,7 @@ public class ReadCSVServiceImpl implements ReadCSVService {
         } catch (IOException e) {
             e.printStackTrace();
             empList.add("IOException");
-        } catch (LoginException e) {
-			e.printStackTrace();
-			empList.add("LoginException");
-			
-			
-			
-		}
+        } 
         catch (RepositoryException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
