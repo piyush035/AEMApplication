@@ -47,7 +47,7 @@ public class ReadCSVServiceImpl implements ReadCSVService {
 	@Override
 	public List<String> getCountries() {
 
-		LOGGER.debug("Inside getCountries list method");
+		LOGGER.debug("Inside getCountries list method amit");
 		final List<String> empList = new ArrayList<String>();
 		
 		String csvFile = "/Users/anand/Desktop/countries.csv";
@@ -57,31 +57,43 @@ public class ReadCSVServiceImpl implements ReadCSVService {
         ResourceResolver resolver = null;
         Resource resource=null;
         
-       // try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-        	LOGGER.debug("before resolver a");
+        	LOGGER.debug("before resolver amit");
         	resolver = JCRUtility.getResourceResolver(resolverFactory);
             session = resolver.adaptTo(Session.class);
-            LOGGER.debug("after resolver a :: "+resolver);
+            LOGGER.debug("after resolver amit :: "+resolver);
             resource = resolver.getResource("/content/dam/AEMApplication/employeeDetails");
-		/*
-		 * Node node = resource.adaptTo(Node.class); while ((line = br.readLine()) !=
-		 * null) {
-		 * 
-		 * // use comma as separator String[] employee = line.split(cvsSplitBy);
-		 * 
-		 * String employeeId = employee[4];
-		 * 
-		 * Node newNode = node.addNode(employeeId, "nt:unstructured");
-		 * 
-		 * empList.add(employee[5]); } session.save();
-		 * 
-		 * } catch (IOException e) { e.printStackTrace(); empList.add("IOException"); }
-		 * catch (RepositoryException e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); empList.add("RepositoryException"); }
-		 * 
-		 * empList.add("Anand"); empList.add("fffffjhjgjgh");
-		 */
-
+            LOGGER.debug("resource amit :: "+resource);
+            try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            	LOGGER.debug("BufferedReader  amit:: "+br);
+        		 Node node = resource.adaptTo(Node.class); 
+        		 LOGGER.debug("node is amit:: "+node);
+        		 while ((line = br.readLine()) != null) {
+        			 empList.add("Anand"); 
+        			 LOGGER.debug("line is amit:: "+line);
+        			 String[] employee = line.split(cvsSplitBy);
+	        		 String employeeId = employee[4];
+	        		 LOGGER.debug("employee is amit:: "+employee);
+	        		 Node newNode = node.addNode(employeeId, "nt:unstructured");
+	        		 newNode.setProperty("name", employee[5]);
+	        		 newNode.setProperty("department", employee[2]);
+	        		 newNode.setProperty("tagging", employee[3]);
+	        		 LOGGER.debug("newNode is amit:: "+newNode);
+	        		 empList.add(employee[5]);
+	        		 LOGGER.debug("empList is amit:: "+empList);
+	        		 session.save();
+        		  
+        		 } 
+        		 
+            }
+			catch (IOException e) { 
+				 e.printStackTrace();
+				 empList.add("IOException"); 
+			 }
+			catch (RepositoryException e) {
+					e.printStackTrace(); 
+					empList.add("RepositoryException"); 
+			}
+            LOGGER.debug("empList before return is :: "+empList);
 		return empList;
 	}
 
