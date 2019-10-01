@@ -132,8 +132,7 @@ public class EmployeeServlet extends SlingAllMethodsServlet {
 					 * Setting a name property for this node
 					 */
 		        	 newNode.setProperty("name", empname);
-		        }
-					
+		        }	
 		        else
 		        {
 		        	node.update(empid);
