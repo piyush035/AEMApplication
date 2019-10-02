@@ -1,0 +1,27 @@
+
+
+<div data-sly-test="${wcmmode.edit && !wcmmode.preview}">
+     Edit: TextBox Component
+</div>
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" />
+<sly data-sly-call="${clientLib.css @ categories='mfscom.components.textboxbutton'}" />
+<sly data-sly-call="${clientLib.js @ categories='mfscom.components.textboxbutton'}" />
+
+<div data-sly-use.textbutton="com.aem.sample.core.models.TextboxButtonModel">
+  <div class="container container-sm">
+    <label for="uid"><b>Id</b></label>
+    <input type="text" id="uidparam" placeholder="Enter User id" name="uid" required>
+    <label for="id"><b>User ID</b></label>
+    <input type="text" id="idparam" placeholder="Enter Id" name="id" required> 
+    <button type="submit" onclick="onSubmitClick()">Get Result</button>
+  </div>
+  <div class="container container-sm margin-bottom" style="background-color:#f1f1f1">
+    
+    
+    <label style="font-weight:bold">Title: </label>
+    <span id="title_val"></span>
+    
+    <label style="font-weight:bold">CompletedStatus: </label>
+    <span id="completedstatus"></span>
+  </div>
+</div>
